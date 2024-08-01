@@ -1,5 +1,8 @@
 import { React, useState } from 'react';
 
+import 'katex/dist/katex.min.css'
+import Latex from 'react-latex-next'
+
 const Task = (props) => {
     const [checked, setChecked] = useState(props.checked)
 
@@ -13,7 +16,9 @@ const Task = (props) => {
     return (
         <label className={style}>
             <input className="form-check-input me-1" type="checkbox" checked={checked} onChange={ toggleHandler }/>
-            { props.name }
+            <Latex>
+                { props.name }
+            </Latex>
         </label>
     )
 }
